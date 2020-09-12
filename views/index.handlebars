@@ -1,17 +1,17 @@
-<style media="screen">
-  li {
-    background-color: wheat;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 50%;
-    font-family: sans-serif;
-  }
-</style>
-
-<h1>List of all Ice Creams</h1>
-
+<div class="col">
 <ul>
-{{#each burgers }}
-  <li>{{burger_name}}, Devoured?: {{devoured}}</li>
+<h1>Created</h1>
+{{#each created }}
+  <li class='list-group-item'>{{burger_name}}</li>
 {{/each}}
 </ul>
+</div>
+
+<div class="col">
+<ul>
+  <h1>Devoured</h1>
+{{#each devoured }}
+  <li class='list-group-item'>{{burger_name}}</li>
+{{/each}}
+</ul>
+</div>
