@@ -1,30 +1,30 @@
 const connection = require('./connection');
 
-const selectAll = (res) => {
-    connection.query(`SELECT * FROM burgers`, function(error, result) {
-        if (error) throw error;
-        const createdBurgers = result.filter(burger => burger.devoured === 0);
-        const devouredBurgers = result.filter(burger => burger.devoured === 1);
-        res.render("index", {
-            created: createdBurgers,
-            devoured: devouredBurgers
+const orm = {
+    selectAll: (cb) => {
+        connection.query(`SELECT * FROM burgers`, function(error, result) {
+            if (error) throw error;
+            cb(result);
         });
-    })
+    },
+    insertOne: (burger_name, cb) => {
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, true)`, [burger_name], function(error, result) {
+            if (error) throw error;
+            cb(result);
+        });
+    },
+    updateOne: (id, cb) => {
+        connection.query(`UPDATE burgers SET burgers.devoured=true WHERE burgers.id=?`, [id], function(error, result) {
+            if (error) throw error;
+            cb(result);
+        })
+    },
+    deleteOne: (id, cb) => {
+        connection.query(`DELETE FROM burgers WHERE burgers.id=?`, [id], function(error, result) {
+            if (error) throw error;
+            cb(result);
+        })
+    }
 }
 
-const insertOne = () => {
-    
-}
-
-const updateOne = () => {
-    
-}
-
-const deleteOne = () => {
-    
-}
-
-module.exports.selectAll = selectAll;
-module.exports.insertOne = insertOne;
-module.exports.updateOne = updateOne;
-module.exports.deleteOne = deleteOne;
+module.exports = orm;
