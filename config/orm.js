@@ -8,7 +8,7 @@ const orm = {
         });
     },
     insertOne: (burger_name, cb) => {
-        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, true)`, [burger_name], function(error, result) {
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, false)`, [burger_name], function(error, result) {
             if (error) throw error;
             cb(result);
         });

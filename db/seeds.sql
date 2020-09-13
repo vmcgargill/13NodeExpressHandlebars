@@ -8,5 +8,6 @@ VALUES ("Cheeseburger", false),
 ("Whopper", false),
 ("Hawaii Burger", false),
 ("California Burger", false),
-("Buffalo Burger", false),
-("Angus Burger", false)
+("Buffalo Burger", true),
+("Angus Burger", false),
+("Bacon Avacado Chicken", true);

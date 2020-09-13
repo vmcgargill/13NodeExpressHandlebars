@@ -14,4 +14,25 @@ router.get("/", function(req, res) {
     })
 });
 
+router.post("/api/:burger", function(req, res) {
+    burger.create([req.params.burger], function(result) {
+        burger.all(function(data) {
+            const createdBurgers = data.filter(burger => burger.devoured === 0);
+            const devouredBurgers = data.filter(burger => burger.devoured === 1);
+            res.render("index", {
+                created: createdBurgers,
+                devoured: devouredBurgers
+            });
+        })
+    })
+});
+
+router.put("/api/:id", function() {
+    
+});
+
+router.delete("/api/:id", function() {
+    
+});
+
 module.exports = router;
