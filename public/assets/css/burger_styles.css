@@ -52,6 +52,14 @@ body {
 .deleteBTN {
   background-color: rgb(139, 0, 0);
 }
+  
+.btn:hover {
+  background-color: rgb(85, 115, 248);
+}
+  
+.btn:active {
+  background-color: rgb(0, 0, 71);
+}
 
 .deleteBTN:hover {
   background-color: rgb(243, 71, 71);
@@ -59,14 +67,6 @@ body {
 
 .deleteBTN:active {
   background-color: rgb(255, 146, 146);
-}
-  
-.btn:hover, .dropdown-item:hover {
-  background-color: rgb(85, 115, 248);
-}
-  
-.btn:active {
-  background-color: rgb(0, 0, 71);
 }
 
 .devourBTN, .deleteBTN {
