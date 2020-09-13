@@ -2,7 +2,7 @@
 <ul>
 <h1>Created</h1>
 {{#each created }}
-  <li class='list-group-item'>{{burger_name}}</li>
+  <li class='list-group-item'>{{burger_name}} <button class="btn devourBTN" value="{{id}}">Devour</button></li>
 {{/each}}
 </ul>
 </div>
@@ -11,7 +11,7 @@
 <ul>
   <h1>Devoured</h1>
 {{#each devoured }}
-  <li class='list-group-item'>{{burger_name}}</li>
+  <li class='list-group-item'>{{burger_name}}<i class='fas fa-trash-alt float-right text-danger delete-note' value="{{id}}"></i></li>
 {{/each}}
 </ul>
 </div>
