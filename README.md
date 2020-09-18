@@ -47,10 +47,10 @@ The config directory contains the configuration layer which is the layer that ac
 
 The ORM.js file contains all of the ORM functions that make actual SQL queries to the database to view, create, update, and delete the burgers in the database. It contains for functions: selectAll, insertOne, updateOne, and deleteOne. All of these functions listed passes through a variable which is a cb (Callback) function that calls back to the models and the controllers layer for the information requests. The CB function sends back the updated information to the models layer, and then to the controller/routes layer so that it can interact with the front end. For example, the selectAll function sends a request to get all of the information from the database, then it sends a callback that contains that information to be displayed on the front end. The insertOne function recieves a request to create a burger by passing in a burger name, and then it sends a callback function with the new burger ID. The updateOne and deleteOne functions work in a similar fasion, they pass through an ID of a burger to be updated/deleted. The only difference here is that the updateOne function updates a burger status to devoured and the deleteOne functions deletes the burger from the database.
 
-These callback functions all send callback functions back to the[Models](#models) layer and the [Routes](#routes) layer so that the front end make update it's own information according to the database.
+These callback functions all send callback functions back to the [Models](#models) layer and the [Routes](#routes) layer so that the front end make update it's own information according to the database.
 
 ## Database
-The database layer is the last but not least layer 
+The database layer is the last but not least layer, it contains the actual database that stores information. The database name in this example is "burgers_db" and it contains one table called the burgers table. A layout of the table can be fount in the [DB directory inside the Schema SQL file](/db/schema.sql). The table has three rows: an id (primary key), a burger name, and a boolean status of weather or not the burger has been devoured. You can find some premade burgers and add them to your own local DB in the [Seeds SQL file inside the DB directory](/db/seeds.sql) 
 
 ## Installation 
 To install, run the following command:
