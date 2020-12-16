@@ -1,4 +1,4 @@
-# 13NodeExpressHandlebars
+# NodeExpressHandlebars
 
 Heroku Deployed App: https://burger-devourer-machine.herokuapp.com/
 
